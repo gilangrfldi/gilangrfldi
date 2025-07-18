@@ -19,7 +19,6 @@ export default function ImageSplitSection() {
                     pin: true,
                     scrub: 1,
                     anticipatePin: 1,
-                    markers: true,
                 },
             });
 
@@ -37,7 +36,7 @@ export default function ImageSplitSection() {
         }, sectionRef);
 
         return () => ctx.revert();
-    }, []);
+    }, []); 
 
     return (
         <div ref={sectionRef} className='ImageSplitSection relative h-screen w-full overflow-hidden bg-[#2c2c34]'>
