@@ -22,6 +22,28 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/components/ChromaGrid/ChromaGrid.jsx",
+    "app/components/DecryptedText/ScramblingText.jsx",
+    "app/components/Lanyard/Lanyard.jsx",
+    "app/data/experience.jsx",
+    "app/data/certificat.jsx",
+    "app/components/Cercification/Certification.jsx",
+    "app/data/hardSkills.jsx",
+    "app/components/Experience/Experience.jsx",
+    "app/components/animations/ScrollLineAnimation.jsx",
+    "app/sections/ContactSection.jsx",
+    "app/sections/HomeSection.jsx",
+    "app/sections/ImageSplitSection.jsx",
+    "app/sections/ProfileSection.jsx",
+    "app/sections/ProjectsSection.jsx",
+    "app/sections/TextSection.jsx",
+    "app/layout.jsx",
+    "app/page.jsx"
+  ],
   "exclude": ["node_modules"]
 }
