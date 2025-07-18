@@ -40,8 +40,12 @@ const ProfileSection = forwardRef(function ProfileSection({ triggerRef }, ref) {
 
     return (
         <div className='mx-auto w-full h-[100%] '>
-            <section className='font-bold text-center text-white' style={{ fontFamily: "var(--font-playfair-display)" }}>
-                <ScrollFloat>Profile</ScrollFloat>
+            {/* <section className='font-bold text-center text-white' style={{ fontFamily: "var(--font-playfair-display)" }}> */}
+            <section>
+                {/* <ScrollFloat>Profile</ScrollFloat> */}
+                <p className='font-bold text-4xl sm:text-5xl md:text-7xl text-center text-white mb-4' style={{ fontFamily: "var(--font-fira-code)" }}>
+                    Profile
+                </p>
             </section>
             <p className='md:text-xl text-center text-gray-200 mb-8' style={{ fontFamily: "var(--font-fira-code)" }}>
                 Everything about me is explained as follows
