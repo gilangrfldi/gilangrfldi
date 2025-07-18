@@ -30,9 +30,9 @@ export default function IconCarousel({ data = hardSkillsData }) {
     };
 
     return (
-        <div className='bg-[#2D3748] border border-[#4A5568] rounded-3xl p-4 md:p-8 w-[350px] md:w-[800px] flex flex-col shadow-lg'>
+        <div className='bg-[#2D3748] border border-[#4A5568] rounded-3xl card-3d p-4 md:p-8 w-[350px] md:w-[800px] flex flex-col shadow-lg'>
             <div className='text-center mb-8'>
-                <h2 className='text-2xl md:text-3xl font-bold text-white' style={{ fontFamily: "var(--font-playfair-display)" }}>
+                <h2 className='text-xl md:text-2xl font-bold text-white' style={{ fontFamily: "var(--font-fira-code)" }}>
                     {data[index].title}
                 </h2>
             </div>
@@ -40,7 +40,7 @@ export default function IconCarousel({ data = hardSkillsData }) {
             <div className='relative flex items-center'>
                 <button
                     onClick={slidePrev}
-                    className='absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-[#4A5568]/50 text-white w-10 h-10 rounded-full md:flex hidden items-center justify-center z-20 hover:bg-[#00d3f2]/70 transition-colors ease-in-out duration-300 cursor-pointer'>
+                    className='absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-[#4A5568]/50 text-white w-10 h-10 rounded-full flex items-center justify-center z-20 hover:bg-[#00d3f2]/70 transition-colors ease-in-out duration-300 cursor-pointer'>
                     <FaChevronLeft />
                 </button>
 
@@ -73,7 +73,7 @@ export default function IconCarousel({ data = hardSkillsData }) {
 
                 <button
                     onClick={slideNext}
-                    className='absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-[#4A5568]/50 text-white w-10 h-10 rounded-full md:flex hidden items-center justify-center z-20 hover:bg-[#00d3f2]/70 transition-colors ease-in-out duration-300 cursor-pointer'>
+                    className='absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-[#4A5568]/50 text-white w-10 h-10 rounded-full flex items-center justify-center z-20 hover:bg-[#00d3f2]/70 transition-colors ease-in-out duration-300 cursor-pointer'>
                     <FaChevronRight />
                 </button>
             </div>

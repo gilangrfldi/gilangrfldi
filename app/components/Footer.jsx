@@ -7,9 +7,9 @@ import ClapCounter from "./ClapCounter/ClapCounter";
 const Footer = () => {
     return (
         <footer className='w-full bg-[#1e232e] text-gray-400 py-16 px-4 md:px-8'>
-            <div className='mx-6'>
+            <div className='mx-auto p-2'>
                 <div className='grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-48 mb-8'>
-                    <div className='col-span-1'>
+                    <div className='col-span-1 text-left'>
                         <h3 className='text-lg font-bold text-white mb-2'>Gilang Rifaldi</h3>
                         <p className='text-sm'>
                             Fullstack developer specializing in building complete web solutions, from robust backend architecture to intuitive user
@@ -17,7 +17,7 @@ const Footer = () => {
                         </p>
                     </div>
 
-                    <div className='col-span-1'>
+                    <div className='col-span-1 text-right md:text-left'>
                         <h3 className='text-lg font-bold text-white mb-2'>Navigation</h3>
                         <ul className='space-y-2 text-sm'>
                             <li>
@@ -43,7 +43,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className='col-span-1'>
+                    <div className='col-span-1 text-left'>
                         <h3 className='text-lg font-bold text-white mb-2'>Find Me Online</h3>
                         <div className='flex space-x-4'>
                             <Link href='https://github.com/gilangrfldi' target='_blank' rel='noopener noreferrer' className='hover:text-cyan-400'>
@@ -73,7 +73,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className='col-span-1'>
+                    <div className='col-span-1 text-right md:text-left'>
                         <h3 className='text-lg font-bold text-white mb-2'>Claps</h3>
                         <ClapCounter />
                     </div>

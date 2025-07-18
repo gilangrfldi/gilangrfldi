@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import ScrollFloat from "../components/ScrollFloat/ScrollFloat";
 import { FaGithub, FaLinkedin, FaInstagram, FaTiktok, FaPaperPlane, FaChevronRight } from "react-icons/fa";
 import SpotlightCard from "../components/SpotlightCard/SpotlightCard";
 import Image from "next/image";
@@ -50,12 +49,16 @@ export default function ContactSection() {
 
     return (
         <div className='flex flex-col items-center justify-start mx-auto min-h-screen px-4'>
-            <section className='text-center text-white' style={{ fontFamily: "var(--font-playfair-display)" }}>
-                <ScrollFloat>Contact Me</ScrollFloat>
-            </section>
-            <p className='md:text-xl text-center text-gray-200 mb-8' style={{ fontFamily: "var(--font-fira-code)" }}>
-                Reach out via form, sosial media, or support platforms.
-            </p>
+            <div className='text-center'>
+                <h1
+                    className='font-bold text-4xl sm:text-5xl md:text-6xl text-white my-4 md:my-8'
+                    style={{ fontFamily: "var(--font-playfair-display)" }}>
+                    Contact Me
+                </h1>
+                <p className='text-lg md:text-xl text-gray-300 max-w-2xl mx-auto' style={{ fontFamily: "var(--font-fira-code)" }}>
+                    Reach out via form, sosial media, or support platforms.
+                </p>
+            </div>
 
             <div className='flex items-center justify-center p-1 rounded-xl bg-[#2D3748] border border-[#4A5568] my-8'>
                 <button
@@ -85,7 +88,7 @@ export default function ContactSection() {
                             transition={{ duration: 0.3 }}
                             className='absolute inset-0'>
                             <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12'>
-                                <div className='flex flex-col gap-4'>
+                                <div className='flex flex-col gap-4' style={{ fontFamily: "var(--font-fira-code)" }}>
                                     <SocialLink
                                         href='https://github.com/gilangrfldi'
                                         icon={<FaGithub />}
@@ -113,7 +116,9 @@ export default function ContactSection() {
                                 </div>
                                 <div className='card-3d'>
                                     <div className='bg-[#2D3748] border border-[#4A5568] p-4 rounded-2xl'>
-                                        <h3 className='text-lg font-semibold text-white mb-4 flex items-center gap-2'>
+                                        <h3
+                                            className='text-lg font-semibold text-white mb-4 flex items-center gap-2'
+                                            style={{ fontFamily: "var(--font-fira-code)" }}>
                                             <FaPaperPlane /> Send Me a Message
                                         </h3>
                                         <form className='space-y-4' onSubmit={handleSubmit}>
@@ -125,7 +130,7 @@ export default function ContactSection() {
                                                 rows={5}
                                                 className='contact-input'
                                                 required></textarea>
-                                            <button type='submit' className='contact-button'>
+                                            <button type='submit' className='contact-button' style={{ fontFamily: "var(--font-fira-code)" }}>
                                                 Send
                                             </button>
                                         </form>
@@ -135,30 +140,22 @@ export default function ContactSection() {
                             </div>
                         </motion.div>
                     )}
-
                     {activeTab === "support" && (
-                        <motion.div
-                            key='support'
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className='absolute inset-0 flex card-3d justify-center'>
-                            <div className='text-center bg-[#2D3748] border border-[#4A5568] p-8 rounded-2xl w-full'>
-                                <h3 className='text-2xl font-bold text-white mb-4'>Support My Work</h3>
-                                <p className='text-gray-300 mb-6'>
-                                    You can support me through the platforms below. Scan the QRIS code to show your appreciation. Every support means
-                                    a lot!
-                                </p>
-
-                                <div className='relative w-[500px] h-[500px] mx-auto'>
-                                    <Image
-                                        src='/images/qris3.jpeg'
-                                        alt='Kode QRIS untuk dukungan'
-                                        layout='fill'
-                                        objectFit='contain'
-                                        className='rounded-md'
-                                    />
+                        <motion.div key='support' className='absolute inset-0 flex  justify-center p-4'>
+                            {" "}
+                            <div className='card-3d'>
+                                <div className='text-center bg-[#2D3748] border border-[#4A5568] p-6 md:p-8 rounded-2xl w-full max-w-lg'>
+                                    {" "}
+                                    <h3 className='text-2xl font-bold text-white mb-4' style={{ fontFamily: "var(--font-fira-code)" }}>
+                                        Support My Work
+                                    </h3>
+                                    <p className='text-gray-300 mb-6'>
+                                        You can support me through the platforms below. Scan the QRIS code to send your appreciation. Every support
+                                        means a lot!
+                                    </p>
+                                    <div className='relative w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto aspect-square rounded-2xl overflow-hidden'>
+                                        <Image src='/images/qris.jpeg' alt='Kode QRIS untuk dukungan' layout='fill' objectFit='cover' />
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

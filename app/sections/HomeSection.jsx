@@ -45,7 +45,7 @@ export default function HomeSection() {
                 <div className='text-4xl md:text-8xl col-span-2 relative flex flex-col items-center justify-center'>
                     <FuzzyText
                         fontFamily='Playfair Display'
-                        fontSize='clamp(2rem, 8vw, 8rem)'
+                        fontSize='clamp(4rem, 8vw, 8rem)'
                         fontWeight={900}
                         color='#ffff'
                         baseIntensity={0.2}

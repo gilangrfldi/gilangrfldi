@@ -9,12 +9,12 @@ import SplitScreenIntro from "./components/SplitScreenIntro";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextSection from "./sections/TextSection";
-import ImageSplitSection from "./sections/ImageSplitSection";
-import ScrollLineAnimation from "./components/animations/ScrollLineAnimation";
 import ProjectsSection from "./sections/ProjectsSection";
 import ContactSection from "./sections/ContactSection";
 import MusicPlayer from "./components/MusicPlayer/MusicPlayer";
 import Footer from "./components/Footer";
+import TextSection2 from "./sections/TextSection2";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const calculateBlur = (scrollY) => {
@@ -37,8 +37,6 @@ export default function HomePage() {
     const [showMusicPlayer, setShowMusicPlayer] = useState(false);
     const audioInstanceRef = useRef(null);
     const textSectionRef = useRef(null);
-    const scrollLineSectionRef = useRef(null);
-    const imageSplitSectionRef = useRef(null);
     const profileSectionRef = useRef(null);
 
     useEffect(() => {
@@ -126,32 +124,27 @@ export default function HomePage() {
 
             {showMusicPlayer && <MusicPlayer audioRef={audioInstanceRef} shouldPlayInitially={shouldPlayMusic} />}
             {!isIntroActive && (
-                <main className='text-white pt-[80px] md:pt-0'>
+                <main className='text-white pt-[80px '>
                     <section>
                         <HomeSection />
                     </section>
                     <section ref={textSectionRef}>
                         <TextSection />
                     </section>
-                    <section ref={scrollLineSectionRef} className='-mb-96'>
-                        <ScrollLineAnimation />
+                    <section>
+                        <TextSection2 />
                     </section>
-                    <section ref={imageSplitSectionRef}>
-                        <ImageSplitSection innerRef={imageSplitSectionRef} />
-                    </section>
-                    <section ref={profileSectionRef} id='profile'>
-                        <div
-                            className='bg-no-repeat bg-cover bg-center -mt-64 pt-64 md:pt-50'
-                            style={{
-                                backgroundImage: "url('/images/bg-profile.png')",
-                                transform: "scale(1.05)",
-                            }}>
+                    <section
+                        ref={profileSectionRef}
+                        className='bg-no-repeat bg-cover bg-center pt-44 -mt-40'
+                        style={{ backgroundImage: "url('/images/bg-profile.png')" }}>
+                        <div id='profile'>
                             <ProfileSection />
                         </div>
                     </section>
                     <section id='projects'>
                         <div
-                            className='bg-no-repeat bg-cover bg-center -mt-10 pt-20 md:-mt-10 md:p-20'
+                            className='bg-no-repeat bg-cover bg-center -mt-14 pt-16 md:p-20'
                             style={{
                                 backgroundImage: "url('/images/bg-project.png')",
                                 transform: "scale(1.05)",
@@ -161,7 +154,7 @@ export default function HomePage() {
                     </section>
                     <section id='contact'>
                         <div
-                            className=' bg-no-repeat bg-cover bg-center -mt-8 pt-20 md:-mt-10 md:pt-20'
+                            className=' bg-no-repeat bg-cover bg-center -mt-20 pt-36 md:-mt-12 md:pt-26'
                             style={{
                                 backgroundImage: "url('/images/bg-profile.png')",
                                 transform: "scale(1.05)",

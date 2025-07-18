@@ -3,10 +3,9 @@
 import React, { useState, useEffect } from "react";
 import { webProjects, mobileProjects } from "../data/projects.jsx";
 import ProjectCard from "../components/ProjectCard/ProjectCard.jsx";
-import ScrollFloat from "../components/ScrollFloat/ScrollFloat.jsx";
 import SpotlightCard from "../components/SpotlightCard/SpotlightCard.jsx";
 import ProjectPreviewPanel from "../components/ProjectPreviewPanel/ProjectPreviewPanel.jsx";
-import { AnimatePresence, motion } from "framer-motion"; 
+import { AnimatePresence, motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -40,10 +39,12 @@ const ProjectSection = () => {
     const displayedProjects = projectType === "web" ? webProjects : mobileProjects;
 
     return (
-        <div className='flex flex-col items-center justify-start mx-auto h-full min-h-screen px-4 p-10'>
-            <section className='text-center text-white mb-4' style={{ fontFamily: "var(--font-playfair-display)" }}>
-                <ScrollFloat>My Projects</ScrollFloat>
-            </section>
+        <div className='flex flex-col items-center justify-start mx-auto min-h-screen px-4 p-10'>
+            <div className='text-center mb-2 '>
+                <h1 className='font-bold text-4xl sm:text-5xl md:text-6xl text-white mb-4' style={{ fontFamily: "var(--font-playfair-display)" }}>
+                    Project
+                </h1>
+            </div>
 
             <div className='flex items-center justify-center p-1 rounded-xl bg-[#424347] border border-[#5A5B5F] mb-8'>
                 <button
@@ -80,7 +81,7 @@ const ProjectSection = () => {
                                 ))}
                             </div>
                         ) : (
-                            <div className='text-center text-gray-400 py-10'>
+                            <div className='text-center text-gray-400 py-10' style={{ fontFamily: "var(--font-fira-code)" }}>
                                 <p>Projects for this category will be added soon.</p>
                             </div>
                         )}
