@@ -1,20 +1,26 @@
 export const musicPlaylist = [
     {
-        title: "Nuvole Bianche",
-        artist: "Ludovico Einaudi",
-        albumArt: "/images/Nuvole_Bianche.jpg",
-        src: "/music/Nuvole_Bianche.mp3",
+        title: "R&B Type Beat - Love",
+        artist: "R&B Beats Daily",
+        albumArt: "/images/music/love.png",
+        src: "/music/R&B Type Beat - Love.mp3",
     },
     {
         title: "Better - Smooth R&B Instrumental",
         artist: "R&B Soul Type Beat",
-        albumArt: "/images/r&b_soul.jpg",
+        albumArt: "/images/music/r&b_soul.jpg",
         src: "/music/better_smooth.mp3",
     },
     {
-        title: "Reprise / Again",
-        artist: "Spirited Away OST",
-        albumArt: "/images/spirited-away.jpg",
-        src: "/music/Spirited_Away_OST.mp3",
+        title: "R&B Acoustic Guitar Type Beat Obvious",
+        artist: "R&B Soul Type Beat",
+        albumArt: "/images/music/acoustic.png",
+        src: "/music/R&B Acoustic Guitar Type Beat Obvious.mp3",
+    },
+    {
+        title: "Nuvole Bianche",
+        artist: "Ludovico Einaudi",
+        albumArt: "/images/music/Nuvole_Bianche.jpg",
+        src: "/music/Nuvole_Bianche.mp3",
     },
 ];

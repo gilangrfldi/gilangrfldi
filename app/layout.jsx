@@ -27,7 +27,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata = {
-    title: "Your Portfolio",
+    title: "Gilang Rifaldi",
     description: "Professional portfolio website",
 };
 
