@@ -6,6 +6,7 @@ import { useGLTF, useTexture, Environment, Lightformer } from "@react-three/drei
 import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 
+// replace with your own imports, see the usage snippet for details
 const cardGLB = "./assets/lanyard/card.glb";
 const lanyard = "./assets/lanyard/lanyard.png";
 
@@ -45,13 +46,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
         ang = new THREE.Vector3(),
         rot = new THREE.Vector3(),
         dir = new THREE.Vector3();
-    const segmentProps = {
-        type: "dynamic",
-        canSleep: true,
-        colliders: false,
-        angularDamping: 4,
-        linearDamping: 4,
-    };
+    const segmentProps = { type: "dynamic", canSleep: true, colliders: false, angularDamping: 4, linearDamping: 4 };
     const { nodes, materials } = useGLTF(cardGLB);
     const texture = useTexture(lanyard);
     const [curve] = useState(() => new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]));
@@ -90,11 +85,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
             dir.copy(vec).sub(state.camera.position).normalize();
             vec.add(dir.multiplyScalar(state.camera.position.length()));
             [card, j1, j2, j3, fixed].forEach((ref) => ref.current?.wakeUp());
-            card.current?.setNextKinematicTranslation({
-                x: vec.x - dragged.x,
-                y: vec.y - dragged.y,
-                z: vec.z - dragged.z,
-            });
+            card.current?.setNextKinematicTranslation({ x: vec.x - dragged.x, y: vec.y - dragged.y, z: vec.z - dragged.z });
         }
         if (fixed.current) {
             [j1, j2].forEach((ref) => {

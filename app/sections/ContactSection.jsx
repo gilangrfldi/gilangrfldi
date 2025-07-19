@@ -141,9 +141,9 @@ export default function ContactSection() {
                         </motion.div>
                     )}
                     {activeTab === "support" && (
-                        <motion.div key='support' className='absolute inset-0 flex  justify-center p-4'>
+                        <motion.div key='support' className='inset-0 flex justify-center p-4'>
                             {" "}
-                            <div className='card-3d'>
+                            <div className='card-3d md:mb-10'>
                                 <div className='text-center bg-[#2D3748] border border-[#4A5568] p-6 md:p-8 rounded-2xl w-full max-w-lg'>
                                     {" "}
                                     <h3 className='text-2xl font-bold text-white mb-4' style={{ fontFamily: "var(--font-fira-code)" }}>
