@@ -7,7 +7,7 @@ import ClapCounter from "./ClapCounter/ClapCounter";
 const Footer = () => {
     return (
         <footer className='w-full bg-[#1e232e] text-gray-400 py-16 px-4 md:px-8'>
-            <div className='mx-auto p-2'>
+            <div className='mx-6'>
                 <div className='grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-48 mb-8'>
                     <div className='col-span-1 text-left'>
                         <h3 className='text-lg font-bold text-white mb-2'>Gilang Rifaldi</h3>

@@ -37,6 +37,7 @@ export default function HomePage() {
     const [showMusicPlayer, setShowMusicPlayer] = useState(false);
     const audioInstanceRef = useRef(null);
     const textSectionRef = useRef(null);
+    const textSection2Ref = useRef(null);
     const profileSectionRef = useRef(null);
 
     useEffect(() => {
@@ -87,6 +88,50 @@ export default function HomePage() {
         return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     }, [isIntroActive]);
 
+    useEffect(() => {
+        if (textSection2Ref.current) {
+            const sectionElement = textSection2Ref.current;
+            let ctx = gsap.context(() => {
+                const timeline = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: sectionElement,
+                        start: "top center",
+                        end: "+=1000",
+                        pin: true,
+                        scrub: 1,
+                    },
+                });
+                timeline.fromTo(".first-text", { opacity: 0 }, { opacity: 1, y: "-40vh", ease: "power1.in" });
+                timeline.fromTo(".quote", { opacity: 0 }, { opacity: 1, y: "-35vh", ease: "power2.out", stagger: 0.2 }, ">-0.20");
+            }, textSection2Ref);
+            return () => ctx.revert();
+        }
+    }, [isIntroActive]);
+
+    useEffect(() => {
+        if (profileSectionRef.current) {
+            const sectionElement = profileSectionRef.current;
+            const animation = gsap.fromTo(
+                sectionElement,
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    ease: "power2.out",
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: sectionElement,
+                        start: "top 80%",
+                        toggleActions: "play none none none",
+                    },
+                }
+            );
+            return () => {
+                animation.kill();
+            };
+        }
+    }, [isIntroActive]);
+
     const handleIntroComplete = (musicWasStarted) => {
         setShowNavbar(true);
         setIsIntroActive(false);
@@ -131,7 +176,7 @@ export default function HomePage() {
                     <section ref={textSectionRef}>
                         <TextSection />
                     </section>
-                    <section>
+                    <section ref={textSection2Ref}>
                         <TextSection2 />
                     </section>
                     <section

@@ -1,8 +1,5 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Carousel from "../components/Carousel/Carousel";
 import CircularGallery from "../components/CircularGallery/CircularGallery";
 import ScramblingText from "../components/DecryptedText/ScramblingText";
@@ -10,38 +7,9 @@ import Certification from "../components/Cercification/Certification";
 import Experience from "../components/Experience/Experience";
 import { TypeAnimation } from "react-type-animation";
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function ProfileSection() {
-    const sectionRef = useRef(null);
-
-    useEffect(() => {
-        const sectionElement = sectionRef.current;
-        if (!sectionElement) return;
-
-        const animation = gsap.fromTo(
-            sectionElement,
-            { opacity: 0, y: 50 },
-            {
-                opacity: 1,
-                y: 0,
-                ease: "power2.out",
-                duration: 1,
-                scrollTrigger: {
-                    trigger: sectionElement,
-                    start: "top 80%",
-                    toggleActions: "play none none none",
-                },
-            }
-        );
-
-        return () => {
-            animation.kill();
-        };
-    }, []);
-
     return (
-        <div ref={sectionRef} className='w-full py-20 md:py-32'>
+        <div className='w-full py-20 md:py-32'>
             <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
                 <div className='text-center mb-12'>
                     <h1 className='font-bold text-4xl sm:text-5xl md:text-6xl text-white mb-4' style={{ fontFamily: "var(--font-playfair-display)" }}>
