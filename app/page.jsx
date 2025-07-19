@@ -247,7 +247,9 @@ export default function HomePage() {
                                 transform: "scale(1.05)",
                             }}>
                             <ContactSection />
-                            <Footer />
+                            <section className='mt-12'>
+                                <Footer />
+                            </section>
                         </div>
                     </section>
                 </main>
