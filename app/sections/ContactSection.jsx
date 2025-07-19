@@ -108,7 +108,7 @@ export default function ContactSection() {
                                         description='See my other creative side.'
                                     />
                                     <SocialLink
-                                        href='https://www.tiktok.com/gilangrfldi'
+                                        href='https://www.tiktok.com/@gilangrfldi'
                                         icon={<FaTiktok />}
                                         title='Tiktok'
                                         description='Follow my thoughts and updates.'
