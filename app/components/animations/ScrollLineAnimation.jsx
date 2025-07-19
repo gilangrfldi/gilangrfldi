@@ -1,50 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
-export default function ScrollLineAnimation() {
-    const svgRef = useRef(null);
-    const pathRef = useRef(null);
-
-    useEffect(() => {
-        const path = pathRef.current;
-        if (!path) return;
-
-        const pathLength = path.getTotalLength();
-
-        gsap.set(path, {
-            strokeDasharray: pathLength,
-            strokeDashoffset: pathLength,
-        });
-
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: svgRef.current,
-                start: "top 60%",
-                end: "+=600",
-                scrub: 1,
-            },
-        });
-
-        tl.to(path, {
-            strokeDashoffset: 0,
-            ease: "none",
-        });
-
-        return () => {
-            tl.kill();
-            ScrollTrigger.getAll().forEach((trigger) => {
-                if (trigger.trigger === svgRef.current) {
-                    trigger.kill();
-                }
-            });
-        };
-    }, []);
-
+export default function ScrollLineAnimation({ svgRef, pathRef }) {
     return (
         <div className='relative flex items-center justify-center pt-[15vh] z-10'>
             <svg ref={svgRef} width='1000' height='1000' viewBox='0 0 640 1000' preserveAspectRatio='xMidYMid meet' className='absolute'>
